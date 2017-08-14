@@ -1,0 +1,33 @@
+
+<!--Dom event propagation 
+http://blog.techbridge.cc/2017/07/15/javascript-event-propagation/
+https://jsbin.com/mogujivera/edit?html,js,console,output
+-->
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <ul id='list'>
+            <li id='list-item'>
+                <a id='list-item-link' target='_blank' href="http://google.com">Google</a>
+            </li>
+        </ul>
+
+        <script>
+
+            const $list = document.getElementById('list');
+            $list.addEventListener('click', (e) => {
+            console.log(e.eventPhase);})
+            //eventPhase:
+            // CAPTURING_PHASE                = 1;
+            // AT_TARGET                      = 2;
+            // BUBBLING_PHASE                 = 3;
+
+              document.getElementById("myBtn").addEventListener("click", displayDate);
+
+                function displayDate() {
+              document.getElementById("demo").innerHTML = Date();
+             }
+        </script>
+    </body>    
+</html>        
